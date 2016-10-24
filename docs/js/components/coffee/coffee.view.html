@@ -1,0 +1,95 @@
+<h1>All Coffees</h1>
+
+<hr>
+
+<div class="form-group">
+  <button ng-click="coffeeCtrl.showForm()" class="btn btn-success">Add Coffee</button>
+</div>
+
+<form ng-submit="coffeeCtrl.addCoffee()" ng-if="coffeeCtrl.form">
+  <div class="form-group">
+    <label for="name">Coffee Name</label>
+    <input type="text" class="form-control" id="name" ng-model="coffeeCtrl.coffeeObj.name" required>
+  </div>
+  <div class="form-group">
+    <label for="roaster">Coffee Roaster</label>
+    <input type="text" class="form-control" id="roaster" ng-model="coffeeCtrl.coffeeObj.roaster" required>
+  </div>
+  <div class="form-group">
+    <label for="origin">Coffee Origin</label>
+    <input type="text" class="form-control" id="origin" ng-model="coffeeCtrl.coffeeObj.origin" required>
+  </div>
+  <div class="form-group">
+    <label>Roast:</label>
+    <select class="form-control" ng-model="coffeeCtrl.coffeeObj.roast" required>
+      <option>Dark</option>
+      <option>Medium</option>
+      <option>Light</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="caffeine">Coffee Caffeine</label>
+    <input type="number" class="form-control" id="caffeine" ng-model="coffeeCtrl.coffeeObj.caffeine" required>
+  </div>
+  <div class="form-group">
+    <label>Decaf:</label>
+    <select class="form-control" ng-model="coffeeCtrl.coffeeObj.decaf" required>
+      <option>True</option>
+      <option>False</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="price">Coffee Price</label>
+    <input type="number" class="form-control" id="price" ng-model="coffeeCtrl.coffeeObj.price" required>
+  </div>
+  <div class="form-group">
+    <label for="quantity">Coffee Quantity</label>
+    <input type="number" class="form-control" id="quantity" ng-model="coffeeCtrl.coffeeObj.quantity" required>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default">Add</button>
+  </div>
+</form>
+
+<table class="table table-striped">
+  <tr>
+    <th>
+      Name
+    </th>
+    <th>
+      Roaster
+    </th>
+    <th>
+      Origin
+    </th>
+    <th>
+      Price
+    </th>
+    <th>
+      Caffeine
+    </th>
+    <th>
+      Decaf
+    </th>
+  </tr>
+  <tr ng-repeat="coffee in coffeeCtrl.coffees">
+    <td>
+      {{coffee.name}}
+    </td>
+    <td>
+      {{coffee.roaster}}
+    </td>
+    <td>
+      {{coffee.origin}}
+    </td>
+    <td>
+      {{coffee.price | currency}}
+    </td>
+    <td>
+      {{coffee.caffeine}} mg
+    </td>
+    <td>
+      {{coffee.decaf}}
+    </td>
+  </tr>
+</table>
