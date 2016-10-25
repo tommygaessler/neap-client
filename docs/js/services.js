@@ -4,7 +4,8 @@
 
   angular
   .module('myApp.services', [])
-  .service('CoffeeService', CoffeeService);
+  .service('CoffeeService', CoffeeService)
+  .service('UserService', UserService);
 
   CoffeeService.$inject = ['$http'];
 
@@ -22,6 +23,30 @@
         method: 'POST',
         url: baseURL,
         data: coffee,
+        headers: {'Content-Type': 'application/json'}
+      });
+    };
+  }
+
+  function UserService($http) {
+
+    this.test = 'service';
+    const baseURL = 'http://localhost:8000/user';
+
+    this.login = function(user) {
+      return $http({
+        method: 'POST',
+        url: baseURL + '/login',
+        data: user,
+        headers: {'Content-Type': 'application/json'}
+      });
+    };
+
+    this.register = function(user) {
+      return $http({
+        method: 'POST',
+        url: baseURL + '/register',
+        data: user,
         headers: {'Content-Type': 'application/json'}
       });
     };

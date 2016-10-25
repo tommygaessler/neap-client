@@ -1,0 +1,31 @@
+<h1>Please Login</h1>
+
+<form ng-submit="userCtrl.onSubmit()" novalidate>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" ng-model="userCtrl.user.username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="text" class="form-control" id="password" ng-model="userCtrl.user.password">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Login</button>
+  </div>
+</form>
+
+<h1>Please Signup</h1>
+
+<form ng-submit="userCtrl.register()" novalidate>
+  <div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" class="form-control" id="username" ng-model="userCtrl.newUser.username">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="text" class="form-control" id="password" ng-model="userCtrl.newUser.password">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success">Login</button>
+  </div>
+</form>
