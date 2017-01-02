@@ -11,7 +11,7 @@
 
   function CoffeeService($http) {
     /*jshint validthis: true */
-    const baseURL = 'https://tranquil-badlands-94076.herokuapp.com/coffee';
+    const baseURL = 'https://neap-server.herokuapp.com/coffee';
     // const baseURL = 'http://localhost:8000/coffee';
 
     this.getAllCoffees = function() {
@@ -31,7 +31,8 @@
   function UserService($http) {
 
     this.test = 'service';
-    const baseURL = 'http://localhost:8000/user';
+    const baseURL = 'https://neap-server.herokuapp.com/user'
+    // const baseURL = 'http://localhost:8000/user';
 
     this.login = function(user) {
       return $http({
